@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const movieSchema = require('./Movie')
 
 const movieListSchema = new Schema(
     {
@@ -7,7 +8,10 @@ const movieListSchema = new Schema(
             required: true,
             unique: true,
         },
-        movies: [movieSchema],
+        movies: [{
+            type: Schema.Types.ObjectId,
+            ref: "Movie"
+        }],
     },
     {
         toJSON: {
