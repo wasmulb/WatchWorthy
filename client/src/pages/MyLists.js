@@ -1,15 +1,15 @@
 import React from 'react'
 import Footer from '../components/Footer'
 
-function Login() {
+function MyLists() {
   return (
     <div className ="loginWrapper">
     <div className="login">
-  <h1>Login</h1>
+  <h1>Login7</h1>
     <form method="post">
-        <input type="email" placeholder="Email Address" name="email" required />
+      <input type="text" name="u" placeholder="Username" required="required" />
         <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" className="btn btn-primary btn-block btn-large">Let's go!</button>
+        <button type="submit" className="btn btn-primary btn-block btn-large">Let me in.</button>
     </form>
     <Footer/>
 </div>
@@ -17,4 +17,4 @@ function Login() {
   )
 }
 
-export default Login
+export default MyLists
