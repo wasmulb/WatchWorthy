@@ -1,0 +1,32 @@
+[
+    {
+        "listName": "IMDb Top 5",
+        "movies": [
+            {
+                "title": "The Shawshank Redemption",
+                "director": "Frank Darabont",
+                "yearReleased": "1994"
+              },
+              {
+                "title": "The Godfather",
+                "director": "Francis Ford Coppola",
+                "yearReleased": "1972"
+              },
+              {
+                "title": "The Dark Knight",
+                "director": "Christopher Nolan",
+                "yearReleased": "2008"
+              },
+              {
+                "title": "The Godfather Part II",
+                "director": "Francis Ford Coppola",
+                "yearReleased": "1974"
+              },
+              {
+                "title": "12 Angry Men",
+                "director": "Sidney Lumet",
+                "yearReleased": "1957"
+              }
+        ]
+    }
+]

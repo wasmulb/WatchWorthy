@@ -1,0 +1,9 @@
+[
+    {
+        "username": "conner",
+        "email": "conner@email.com",
+        "password": "1234567890",
+        "movieLists": [],
+        "watchedMovies": []
+    }
+]
