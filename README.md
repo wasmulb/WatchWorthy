@@ -2,16 +2,18 @@
 Levi and Conner's project #3
 
 ## User Story
-AS an outdoor enthusiast 
-I WANT to search for hiking trails, biking trails and campsites from a website
-SO THAT I can plan my outdoor trips.
+AS an avid movie watched
+I WANT to browse popular movie lists
+SO THAT I can track my progress as I watch the movies.
 
 ## Acceptance Criteria
-GIVEN a hiking and campsite searching website
-WHEN I search a city
-THEN I am presented with available hiking trails, biking trails and campsites
-WHEN I click on a displayed hiking trail, biking trail or campsite
-THEN I am given a Google map of the location where directions can be accessed
+GIVEN a movie list tracking website
+WHEN I load the homepage
+THEN I am presented with a landing page with prompts to sign in and a description of the movie tracking site.
+WHEN I click to login
+THEN I am able to make an account that authenticates through JWT.
+WHEN I click to login
+THEN I am able to make an account that authenticates through JWT.
 
 ## Description
 This web application was made to locate trails and campsites around a city of your choice. This was a project for a fullstack development bootcamp through the University of Washington. We hope this website gets you into the great outdoors!
