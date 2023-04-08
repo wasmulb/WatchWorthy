@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../components/Footer'
+import Auth from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 function Signup() {
+  const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [addUser, {error}] = useMutation(ADD_USER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) =>{
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+    try {
+      const { data } = await addUser({
+        variables: {...userFormData}
+      });
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+  }
   return (
     <div className ="loginWrapper">
     <div className="login">
