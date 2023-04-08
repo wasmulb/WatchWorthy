@@ -8,7 +8,7 @@ function Signup() {
   const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [addUser, {error}] = useMutation(ADD_USER);
+  const [addUser, {error, data}] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -44,11 +44,11 @@ function Signup() {
     <div className ="loginWrapper">
     <div className="login">
   <h1>Sign up</h1>
-    <form method="post">
-        <input type="username" placeholder="Username" name="username" required />
-        <input type="email" placeholder="Email Address" name="email" required />
-        <input type="password" name="p" placeholder="Password" required />
-        <button type="submit" className="btn btn-primary btn-block btn-large">Sign Me Up!</button>
+    <form method="post" onSubmit={handleFormSubmit}>
+        <input type="username" placeholder="Username" name="username" onChange={handleInputChange} required />
+        <input type="email" placeholder="Email Address" name="email" onChange={handleInputChange} required />
+        <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
+        <button type="submit" className="btn btn-primary btn-block btn-large"  onClick={handleFormSubmit} validated={validated}>Sign Me Up!</button>
     </form>
     <Footer/>
 </div>
