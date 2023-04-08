@@ -34,21 +34,21 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        // saveMovieList: async (parent, {movieList}, context) => {
-        //     if(!context.user){
-        //         throw new AuthenticationError('Error! No user logged in')
-        //     }
-        //     return User.findOneAndUpdate(
-        //         { _id: context.user._id},
-        //         {
-        //             $addToSet: { movieLists: movieList },
-        //         },
-        //         {
-        //             new: true,
-        //             runValidators: true,
-        //         }
-        //     )
-        // },
+        saveMovieList: async (parent, {movieListId}, context) => {
+            if(!context.user){
+                throw new AuthenticationError('Error! No user logged in')
+            }
+            return User.findOneAndUpdate(
+                { _id: context.user._id},
+                {
+                    $addToSet: { movieLists: movieListId },
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            )
+        },
         // watchedMovie: async (parent, {watchedMovie}, context) => {
         //     if(!context.user){
         //         throw new AuthenticationError('Error! No user logged in')
