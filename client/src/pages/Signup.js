@@ -7,6 +7,7 @@ function Signup() {
     <div className="login">
   <h1>Sign up</h1>
     <form method="post">
+        <input type="username" placeholder="Username" name="username" required />
         <input type="email" placeholder="Email Address" name="email" required />
         <input type="password" name="p" placeholder="Password" required="required" />
         <button type="submit" className="btn btn-primary btn-block btn-large">Sign Me Up!</button>
