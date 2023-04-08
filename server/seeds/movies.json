@@ -1,0 +1,26 @@
+[{
+  "_id": "642fa365071b6d1af6b8487a",
+  "title": "The Shawshank Redemption",
+  "director": "Frank Darabont",
+  "yearReleased": "1994"
+},{
+  "_id": "642fa365071b6d1af6b8487b",
+  "title": "The Godfather",
+  "director": "Francis Ford Coppola",
+  "yearReleased": "1972"
+},{
+  "_id": "642fa365071b6d1af6b8487c",
+  "title": "The Dark Knight",
+  "director": "Christopher Nolan",
+  "yearReleased": "2008"
+},{
+  "_id": "642fa365071b6d1af6b8487d",
+  "title": "The Godfather Part II",
+  "director": "Francis Ford Coppola",
+  "yearReleased": "1974"
+},{
+  "_id": "642fa365071b6d1af6b8487e",
+  "title": "12 Angry Men",
+  "director": "Sidney Lumet",
+  "yearReleased": "1957"
+}]
