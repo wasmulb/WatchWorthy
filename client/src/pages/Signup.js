@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Footer from '../components/Footer'
-import Auth from '@apollo/client';
+import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -32,7 +32,14 @@ function Signup() {
       console.error(err);
       setShowAlert(true);
     }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
   }
+
   return (
     <div className ="loginWrapper">
     <div className="login">
@@ -40,7 +47,7 @@ function Signup() {
     <form method="post">
         <input type="username" placeholder="Username" name="username" required />
         <input type="email" placeholder="Email Address" name="email" required />
-        <input type="password" name="p" placeholder="Password" required="required" />
+        <input type="password" name="p" placeholder="Password" required />
         <button type="submit" className="btn btn-primary btn-block btn-large">Sign Me Up!</button>
     </form>
     <Footer/>
@@ -49,4 +56,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Signup;
