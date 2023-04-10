@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Footer from '../components/Footer'
-import Auth from '@apollo/client';
+import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 

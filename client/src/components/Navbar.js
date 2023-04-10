@@ -11,6 +11,15 @@ function Navbar() {
     const handleClick = (click) => {
         setPage (click)
     }
+
+    const [loggedIn, setLoggedIn] = useState(false);
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Clear user session and set loggedIn to false
+    setLoggedIn(false);
+  }
+
   return (
     <div>
         <nav>
@@ -18,6 +27,8 @@ function Navbar() {
                 <ul className="navLinks">
                 {page === "Login" ? (<li className="nav-item active"><a className="nav-link">Login</a></li>) : (<li className="nav-item"><a className="nav-link" onClick={ () => {handleClick("Login")}}>Login</a></li>)}
                 {page === "Signup" ? (<li className="nav-item active"><a className="nav-link">Signup</a></li>) : (<li className="nav-item"><a className="nav-link" onClick={ () => {handleClick("Signup")}}>Signup</a></li>)}
+                </ul>
+                <ul className="navLinks">
                 {page === "MyLists" ? (<li className="nav-item active"><a className="nav-link">My Lists</a></li>) : (<li className="nav-item"><a className="nav-link" onClick={ () => {handleClick("MyLists")}}>My Lists</a></li>)}
                 {page === "AllLists" ? (<li className="nav-item active"><a className="nav-link">All Lists</a></li>) : (<li className="nav-item"><a className="nav-link" onClick={ () => {handleClick("AllLists")}}>All Lists</a></li>)}
                
