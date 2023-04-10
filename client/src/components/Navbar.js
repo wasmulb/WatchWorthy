@@ -12,6 +12,15 @@ function Navbar() {
     const handleClick = (click) => {
         setPage (click)
     }
+
+    const [loggedIn, setLoggedIn] = useState(false);
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Clear user session and set loggedIn to false
+    setLoggedIn(false);
+  }
+
   return (
     <div>
         <nav>
