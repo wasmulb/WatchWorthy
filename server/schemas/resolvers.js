@@ -1,18 +1,31 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, MovieList, Movie } = require('../models');
 const { signToken } = require('../utils/auth');
+const { populate } = require('../models/User');
 
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find();
+            return User.find().populate('movieLists').populate({
+                path: 'movieLists',
+                populate: 'movies'
+            });
         },
         me: async (parents, args, context) => {
             if(!context.user){
                 throw new AuthenticationError('Error, no user logged in!')
             }
-            return User.findOne({ _id: context.user._id})
+            return User.findOne({ _id: context.user._id}).populate('movieLists').populate({
+                path: 'movieLists',
+                populate: 'movies'
+            })
         },
+        movies: async () => {
+            return Movie.find();
+        },
+        movieLists: async () => {
+            return MovieList.find().populate('movies')
+        }
     },
     Mutation: {
         addUser: async (parent, { username, email, password}) => {
@@ -47,7 +60,10 @@ const resolvers = {
                     new: true,
                     runValidators: true,
                 }
-            )
+            ).populate('movieLists').populate({
+                path: 'movieLists',
+                populate: 'movies'
+            })
         },
         // watchedMovie: async (parent, {watchedMovie}, context) => {
         //     if(!context.user){
