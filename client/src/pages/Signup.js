@@ -11,7 +11,7 @@ function Signup() {
   const [addUser, {error, data, loading}] = useMutation(ADD_USER);
      if (loading) return 'Submitting...';
      if (error) return `Submission error! ${error.message}`;
-     
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });

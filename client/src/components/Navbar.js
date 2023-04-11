@@ -20,6 +20,7 @@ function Navbar() {
     // Clear user session and set loggedIn to false
     setLoggedIn(false);
   }
+  
 
   return (
     <div>
