@@ -8,8 +8,10 @@ function Signup() {
   const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [addUser, {error, data}] = useMutation(ADD_USER);
-
+  const [addUser, {error, data, loading}] = useMutation(ADD_USER);
+     if (loading) return 'Submitting...';
+     if (error) return `Submission error! ${error.message}`;
+  console.log(data);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
@@ -27,7 +29,7 @@ function Signup() {
       const test = await addUser({
         variables: {...userFormData}
       });
-      Auth.login(data.addUser.token);
+      Auth.login(data?.addUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);

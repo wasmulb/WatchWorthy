@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6) ), url("./assets/images/background.jpeg");
+  background: url("./assets/images/background.jpeg");
   background-position:center top;
   background-size: 100%;
   background-color: black;
