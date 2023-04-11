@@ -1,13 +1,15 @@
 import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-// import About from "./pages/About";
+import {Route, Routes, BrowserRouter as Router} from "react-router-dom"
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import AuthRoutes from "./components/Routes/AuthRoutes";
+import UnAuthRoutes from "./components/Routes/UnAuthRoutes";
 import { setContext } from '@apollo/client/link/context';
+import Auth from './utils/auth'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,7 +35,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <div>
+
+      <Router>
       <Navbar/>
+      {Auth.loggedIn()? (
+      <AuthRoutes />) : (
+      <UnAuthRoutes />) }
+     </Router>
+
     </div>
   </ApolloProvider>
   );
