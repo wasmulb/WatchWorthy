@@ -24,7 +24,7 @@ function Signup() {
       event.stopPropagation();
     };
     try {
-      const { data } = await addUser({
+      const test = await addUser({
         variables: {...userFormData}
       });
       Auth.login(data.addUser.token);
@@ -48,7 +48,7 @@ function Signup() {
         <input type="username" placeholder="Username" name="username" onChange={handleInputChange} required />
         <input type="email" placeholder="Email Address" name="email" onChange={handleInputChange} required />
         <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
-        <button type="submit" className="btn btn-primary btn-block btn-large"  onClick={handleFormSubmit} validated={validated}>Sign Me Up!</button>
+        <button type="submit" className="btn btn-primary btn-block btn-large"  onClick={handleFormSubmit} validated={validated.toString()}>Sign Me Up!</button>
     </form>
     <Footer/>
 </div>
