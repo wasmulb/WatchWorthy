@@ -1,21 +1,37 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PROFILES = gql`
-  query allProfiles {
-    profiles {
-      _id
-      name
-      skills
+export const MY_PROFILE = gql`
+query Me {
+  me {
+    username
+    _id
+    email
+    movieLists {
+      listName
+      movies {
+        director
+        title
+        yearReleased
+      }
+    }
+    watchedMovies {
+      title
+      director
+      yearReleased
     }
   }
+}
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      name
-      skills
+export const ALL_LISTS =gql`
+query MovieLists {
+  movieLists {
+    listName
+    movies {
+      title
+      director
+      yearReleased
     }
   }
+}
 `;

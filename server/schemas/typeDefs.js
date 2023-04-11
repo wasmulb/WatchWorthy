@@ -5,7 +5,8 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
-        movieLists: [MovieList]   
+        movieLists: [MovieList]
+        watchedMovies: [Movie]   
     }
 
     type MovieList {
