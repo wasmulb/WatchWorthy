@@ -25,3 +25,32 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_LIST = gql`
+mutation Mutation($movieListId: String!) {
+  saveMovieList(movieListId: $movieListId) {
+    _id
+    email
+    movieLists {
+      listName
+      movies {
+        director
+        title
+        yearReleased
+      }
+    }
+  }
+}
+`;
+
+export const WATCHED_MOVIE = gql`
+mutation Mutation($movieId: String!) {
+  watchedMovie(movieId: $movieId) {
+    watchedMovies {
+      title
+      yearReleased
+      director
+    }
+  }
+}
+`;

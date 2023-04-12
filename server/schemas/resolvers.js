@@ -65,21 +65,21 @@ const resolvers = {
                 populate: 'movies'
             })
         },
-        // watchedMovie: async (parent, {watchedMovie}, context) => {
-        //     if(!context.user){
-        //         throw new AuthenticationError('Error! No user logged in')
-        //     }
-        //     return User.findOneAndUpdate(
-        //         { _id: context.user._id},
-        //         {
-        //             $addToSet: { watchedMovies: watchedMovie },
-        //         },
-        //         {
-        //             new: true,
-        //             runValidators: true,
-        //         }
-        //     )
-        // }
+        watchedMovie: async (parent, {movieId}, context) => {
+            if(!context.user){
+                throw new AuthenticationError('Error! No user logged in')
+            }
+            return User.findOneAndUpdate(
+                { _id: context.user._id},
+                {
+                    $addToSet: { watchedMovies: movieId },
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            ).populate('watchedMovies')
+        }
     }
 }
 
