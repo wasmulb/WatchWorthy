@@ -43,6 +43,18 @@ mutation Mutation($movieListId: String!) {
 }
 `;
 
+export const REMOVE_LIST = gql`
+mutation Mutation($movieListId: String!) {
+  removeMovieList(movieListId: $movieListId) {
+    _id
+    email
+    movieLists {
+      listName
+    }
+  }
+}
+`;
+
 export const WATCHED_MOVIE = gql`
 mutation Mutation($movieId: String!) {
   watchedMovie(movieId: $movieId) {
@@ -50,6 +62,16 @@ mutation Mutation($movieId: String!) {
       title
       yearReleased
       director
+    }
+  }
+}
+`;
+
+export const UNWATCH_MOVIE = gql`
+mutation UnwatchMovie($movieId: String!) {
+  unwatchMovie(movieId: $movieId) {
+    watchedMovies {
+      title
     }
   }
 }
