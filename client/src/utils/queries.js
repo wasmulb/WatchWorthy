@@ -26,6 +26,7 @@ query Me {
 export const ALL_LISTS =gql`
 query MovieLists {
   movieLists {
+    _id
     listName
     movies {
       title

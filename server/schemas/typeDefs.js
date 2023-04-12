@@ -10,11 +10,13 @@ const typeDefs = gql`
     }
 
     type MovieList {
+        _id: ID
         listName: String
         movies: [Movie]
     }
 
     type Movie {
+        _id: ID
         title: String
         director: String
         yearReleased: String
