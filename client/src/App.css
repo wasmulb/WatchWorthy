@@ -27,14 +27,16 @@ body {
 
 }
 
+
 .navLinks {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   list-style: none;
-  color: white;
   text-shadow: 1px 3px 3px black;
   font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
 }
 .navLinks:hover {
   cursor: pointer; 

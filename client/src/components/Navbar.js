@@ -12,14 +12,14 @@ function Navbar() {
                 <ul className="navLinks">
                 {Auth.loggedIn() ? (
                   <>                
-                <li className="nav-item active"><Link to='/allLists' className="nav-link">All Lists</Link></li>
-                <li className="nav-item active"><Link to='/myLists' className="nav-link">My Lists</Link></li>
+                <li className="nav-item active"><Link to='/all-lists' className="navLinks">All Lists</Link></li>
+                <li className="nav-item active"><Link to='/my-lists' className="navLinks">My Lists</Link></li>
                 <li onClick={Auth.logout}>Logout</li>
                   </>
                 ) : (
                   <>
-                  <li className="nav-item active"><Link to='/' className="nav-link">Login</Link></li>
-                <li className="nav-item active"><Link to='/signup' className="nav-link">Signup</Link></li>
+                  <li className="nav-item active"><Link to='/' className="navLinks">Login</Link></li>
+                <li className="nav-item active"><Link to='/signup' className="navLinks">Signup</Link></li>
                   </>
                 )}
                </ul>
