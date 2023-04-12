@@ -13,7 +13,7 @@ function Navbar() {
         setPage (click)
     }
 
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false)
 
   // Function to handle logout
   const handleLogout = () => {

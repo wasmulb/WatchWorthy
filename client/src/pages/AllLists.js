@@ -13,11 +13,11 @@ function AllLists() {
     <div className ="allListsWrapper">
     <div className="col-12 col-md-10 my-3">
           {loading ? (
-            <div>Loading...</div>
+            <div className = 'loading'>Loading...</div>
           ) : (<>
             <MovieList
               movieLists={movieLists}
-              title="Here's the current roster of friends..."
+              title="Here's the current roster of movies..."
             />
           </>
 
