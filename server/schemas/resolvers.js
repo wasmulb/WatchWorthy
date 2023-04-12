@@ -65,6 +65,24 @@ const resolvers = {
                 populate: 'movies'
             })
         },
+        removeMovieList: async (parent, {movieListId}, context) => {
+            if(!context.user){
+                throw new AuthenticationError('Error! No user logged in')
+            }
+            return User.findOneAndUpdate(
+                { _id: context.user._id},
+                {
+                    $pull: { movieLists: movieListId },
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            ).populate('movieLists').populate({
+                path: 'movieLists',
+                populate: 'movies'
+            })
+        },
         watchedMovie: async (parent, {movieId}, context) => {
             if(!context.user){
                 throw new AuthenticationError('Error! No user logged in')
@@ -73,6 +91,21 @@ const resolvers = {
                 { _id: context.user._id},
                 {
                     $addToSet: { watchedMovies: movieId },
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            ).populate('watchedMovies')
+        },
+        unwatchMovie: async (parent, {movieId}, context) => {
+            if(!context.user){
+                throw new AuthenticationError('Error! No user logged in')
+            }
+            return User.findOneAndUpdate(
+                { _id: context.user._id},
+                {
+                    $pull: { watchedMovies: movieId },
                 },
                 {
                     new: true,

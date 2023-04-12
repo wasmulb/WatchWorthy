@@ -36,7 +36,9 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         saveMovieList(movieListId: String!): User
+        removeMovieList(movieListId: String!): User
         watchedMovie(movieId: String!): User
+        unwatchMovie(movieId: String!): User
     }
 `;
 
