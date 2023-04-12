@@ -5,8 +5,8 @@ import MyLists from "../../pages/MyLists";
 function AuthRoutes () {
     return(
 <Routes>
-<Route path = '/allLists' element= {< AllLists/>} />
-<Route path = '/myLists' element = {<MyLists />} />
+<Route path = '/all-lists' element= {< AllLists/>} />
+<Route path = '/my-lists' element = {<MyLists />} />
 </Routes>
     )
 }
