@@ -1,6 +1,5 @@
 const db = require('../config/connection');
-const { User, Movie, MovieList } = require('../models/index');
-const userSeeds = require('./userSeeds.json');
+const { Movie, MovieList } = require('../models/index');
 const movies = require('./movies.json');
 const movieListSeeds = require('./movieListSeeds');
 
@@ -11,9 +10,6 @@ db.once('open', async () => {
 
         await MovieList.deleteMany({});
         await MovieList.create(movieListSeeds);
-
-        // await User.deleteMany({});
-        // await User.create(userSeeds)
 
         console.log('Database seeded!')
         process.exit(0);
