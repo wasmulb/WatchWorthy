@@ -190,6 +190,17 @@ margin:5px
 
 }
 
+.noMovieText {
+  color:white; 
+  height: 10%; 
+  text-shadow: 0 2px 5px rgb(0, 0, 0); 
+  letter-spacing:1px; text-align:center; 
+  margin:10px;
+  padding: 10px
+
+
+}
+
 
 .loading {
   color: white;
