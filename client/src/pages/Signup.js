@@ -3,8 +3,10 @@ import Footer from '../components/Footer'
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate();
   const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -12,6 +14,7 @@ function Signup() {
      if (loading) return 'Submitting...';
      if (error) return `Submission error! ${error.message}`;
 
+     
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
@@ -29,7 +32,10 @@ function Signup() {
       const test = await addUser({
         variables: {...userFormData}
       });
+      console.log(test)
       Auth.login(data?.addUser.token);
+      navigate('/allLists')
+      
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -41,6 +47,8 @@ function Signup() {
       password: '',
     });
   }
+  console.log(data)
+     console.log(loading)
 
   return (
     <div className ="loginWrapper">
