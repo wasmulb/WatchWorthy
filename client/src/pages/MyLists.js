@@ -5,6 +5,7 @@ function MyLists() {
   return (
     <div className ="myListsWrapper">
       <Footer/>
+      this is the my list page
 </div>
   )
 }

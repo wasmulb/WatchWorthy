@@ -5,7 +5,8 @@ function Footer() {
     <div className="footer-container">
     
       <p className="footerText">WatchWorthy</p>
-</div>
+      
+    </div>
 
 
   )
