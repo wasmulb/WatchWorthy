@@ -1,11 +1,17 @@
 import { gql, useMutation } from '@apollo/client';
 import { ADD_LIST } from '../../utils/mutations';
-
+import { useState } from 'react';
 
 
 const MovieList = ({ movieLists }) => {
   const [addList] = useMutation(ADD_LIST);
-
+  const [visibleMovieCount, setVisibleMovieCount] = useState(5);
+  const handleShowMoreClick = () => {
+    setVisibleMovieCount(visibleMovieCount + 5);
+  };
+  const handleShowLessClick = () => {
+    setVisibleMovieCount(visibleMovieCount - 5);
+  };
   const handleAddToList = (movieListId) => {
     console.log(movieListId);
     addList({ variables: { movieListId } })
@@ -20,18 +26,21 @@ const MovieList = ({ movieLists }) => {
   if (movieLists.length === 0) {
     return <h1 className='noMovieText'>No Movie Lists!</h1>;
   }
-console.log(movieLists)
   return (
     <div className='movieListContainer'>
       {movieLists.map((movieList, index) => (
         <div key={index} className='movieListCard'>
           {movieList.listName}
           <div className='movieInfo'>
-            {movieList.movies.map((movie, index) => (
+            {movieList.movies.slice(0, visibleMovieCount).map((movie, index) => (
               <div key={index} className='movieText'>
                 Movie Title: {movie.title}, Movie Director: {movie.director}, Year Released: {movie.yearReleased}
               </div>
             ))}
+            {visibleMovieCount < movieList.movies.length && (
+            <button onClick={handleShowMoreClick}>Show more</button>)}
+            {visibleMovieCount > 5 && (
+            <button onClick={handleShowLessClick}>Show Less</button>)}
           </div>
           <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => handleAddToList(movieList._id)}>Add to My Lists!</button>
         </div>
