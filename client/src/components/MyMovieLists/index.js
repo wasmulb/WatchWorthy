@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { MY_PROFILE } from '../../utils/queries';
 import { useState } from 'react';
+import { filterMovies } from '../../utils/watched';
 
 const MyMovieLists = () => {
 
