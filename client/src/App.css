@@ -141,68 +141,72 @@ input:-webkit-autofill {
 
 .allListsWrapper {
   display: flex;
- 
   align-items: center;
   justify-content: center;
   height: 88vh;
   bottom: 0%;
   width: 100%;
-
 }
+
 .movieListContainer {
-  color:white; 
-  height:25%;
-  background-color: black; 
-  border: 1px solid white;
+  align-items: center;
+  height: 70vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  /* background-color: black; 
+  border: 1px solid white; */
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.809); 
-  letter-spacing:1px; text-align:center; 
-
-
+  letter-spacing: 1px;
+  text-align: center; 
 }
 
 .movieListCard {
-display:block;
-height:25%;
-padding:10px;
-margin:2px;
-bottom:25vh;
-
+  display: block;
+  border-radius: 10px;
+  background-color: black;
+  border: 2px solid white;
+  padding: 10px;
+  margin: 20px;
+  bottom: 25vh;
 }
+
 .movieInfo {
-  color:white; 
-  height: 10%; 
-  font-size: 2px;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
   border: 1px solid white;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.809); 
-  letter-spacing:1px; text-align:center; 
-  margin:10px;
-  padding: 10px
-
-
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .movieText {
-  color:white; 
-  height: 10%; 
+  color: white;
+  border-radius: 10px;
   border: 1px solid white;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.809); 
-  letter-spacing:1px; text-align:center; 
-  margin:10px;
-  padding: 10px
-
-
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .noMovieText {
-  color:white; 
-  height: 10%; 
+  color: white;
+  height: 10%;
   text-shadow: 0 2px 5px rgb(0, 0, 0); 
-  letter-spacing:1px; text-align:center; 
-  margin:10px;
-  padding: 10px
-
-
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
+
 
 
 .loading {
@@ -258,6 +262,7 @@ bottom:25vh;
   text-justify: center;
   color:white;
   text-shadow: 2px 4px 4px black;
+  margin-top: 0%;
   font-size: 8vh;
   bottom: 0%;
 }
