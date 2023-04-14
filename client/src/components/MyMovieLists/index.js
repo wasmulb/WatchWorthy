@@ -30,21 +30,27 @@ const MyMovieLists = () => {
     <div className= 'movieListContainer'>
       {movieLists.map((movieList, index) => (
         <div key={index} className='movieListCard'>
-          {movieList.listName} 
+          <h1>{movieList.listName} </h1>
           <p >Progress: {movieList.movies.length} </p>
           <div className = 'movieInfo'>
           {movieList.movies.slice(0, visibleMovieCount).map((movie, index) => (
             <div key={index} className='movieText'>
-              {movie.title}
-              Director: {movie.director}
-              Year Released: {movie.yearReleased}
+              <p>{movie.title} | 
+              Director: {movie.director} | {movie.yearReleased}</p>
+              <div class="checkbox-wrapper-26">
+                <input type="checkbox" id="_checkbox-26" />
+                <label for="_checkbox-26">
+                  <div class="tick_mark"></div>
+                </label>
+                <p className = 'watchedLabel'>Watched</p>
+              </div>
             </div>
             
           ))}
           {visibleMovieCount < movieList.movies.length && (
-            <button onClick={handleShowMoreClick}>Show more</button>)}
+            <button className="btn btn-primary btn-large" onClick={handleShowMoreClick}>Show more</button>)}
             {visibleMovieCount > 5 && (
-            <button onClick={handleShowLessClick}>Show Less</button>)}
+            <button className="btn btn-primary btn-large" onClick={handleShowLessClick}>Show Less</button>)}
           </div>
         </div>
       ))}
