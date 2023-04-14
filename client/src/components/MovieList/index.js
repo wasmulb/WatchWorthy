@@ -38,9 +38,9 @@ const MovieList = ({ movieLists }) => {
               </div>
             ))}
             {visibleMovieCount < movieList.movies.length && (
-            <button onClick={handleShowMoreClick}>Show more</button>)}
+            <button className="btn btn-primary btn-large" onClick={handleShowMoreClick}>Show more</button>)}
             {visibleMovieCount > 5 && (
-            <button onClick={handleShowLessClick}>Show Less</button>)}
+            <button className="btn btn-primary btn-large" onClick={handleShowLessClick}>Show Less</button>)}
           </div>
           <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => handleAddToList(movieList._id)}>Add to My Lists!</button>
         </div>
