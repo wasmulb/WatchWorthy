@@ -47,8 +47,6 @@ function Signup() {
       password: '',
     });
   }
-  console.log(data)
-     console.log(loading)
 
   return (
     <div className ="loginWrapper">

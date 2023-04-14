@@ -151,6 +151,7 @@ input:-webkit-autofill {
 .movieListContainer {
   align-items: center;
   height: 70vh;
+  width:90vw;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -161,17 +162,18 @@ input:-webkit-autofill {
   border: 1px solid white; */
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.809); 
   letter-spacing: 1px;
-  text-align: center; 
+  text-align: center;
 }
 
 .movieListCard {
   display: block;
   border-radius: 10px;
-  background-color: black;
+  background-color: #222222;
   border: 2px solid white;
+  width:90%;
   padding: 10px;
   margin: 20px;
-  bottom: 25vh;
+
 }
 
 .movieInfo {

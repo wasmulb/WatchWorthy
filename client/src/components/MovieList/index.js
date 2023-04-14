@@ -13,7 +13,7 @@ const MovieList = ({ movieLists }) => {
     setVisibleMovieCount(visibleMovieCount - 5);
   };
   const handleAddToList = (movieListId) => {
-    console.log(movieListId);
+
     addList({ variables: { movieListId } })
       .then((response) => {
         console.log('Movie list added successfully!', response);
