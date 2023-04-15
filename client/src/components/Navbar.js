@@ -14,7 +14,7 @@ function Navbar() {
                   <>                
                 <li className="nav-item active"><Link to='/' className="navLinks">All Lists</Link></li>
                 <li className="nav-item active"><Link to='/my-lists' className="navLinks">My Lists</Link></li>
-                <li className="nav-item active" onClick={Auth.logout}><Link to='/'> Logout </Link></li>
+                <li className="nav-item active" onClick={Auth.logout}><Link to='/' className="navLinks"> Logout </Link></li>
                   </>
                 ) : (
                   <>
