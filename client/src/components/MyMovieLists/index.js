@@ -17,13 +17,13 @@ const MyMovieLists = () => {
     setVisibleMovieCount(visibleMovieCount - 5);
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :</p>;
+  if (loading) return <h3 className='noMovieText'>Loading...</h3>;
+  if (error) return <p className='noMovieText'>Error : no user logged in</p>;
 
   const { movieLists } = data.me;
 
   if (movieLists.length === 0) {
-    return <h1>No Movie Lists!</h1>;
+    return <h1 className='noMovieText'>No Movie Lists!</h1>;
   }
 
   return (
@@ -48,9 +48,9 @@ const MyMovieLists = () => {
             
           ))}
           {visibleMovieCount < movieList.movies.length && (
-            <button className="btn btn-primary btn-large" onClick={handleShowMoreClick}>Show more</button>)}
+            <button className="btn1 btn1-primary btn1-large" onClick={handleShowMoreClick}>Show more</button>)}
             {visibleMovieCount > 5 && (
-            <button className="btn btn-primary btn-large" onClick={handleShowLessClick}>Show Less</button>)}
+            <button className="btn1 btn1-primary btn1-large" onClick={handleShowLessClick}>Show Less</button>)}
           </div>
         </div>
       ))}
