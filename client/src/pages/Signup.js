@@ -32,9 +32,10 @@ function Signup() {
       const test = await addUser({
         variables: {...userFormData}
       });
-      console.log(test)
-      Auth.login(data?.addUser.token);
-      navigate('/allLists')
+
+      // Auth.login(data?.login.token);
+      navigate('/')
+      
       
     } catch (err) {
       console.error(err);
