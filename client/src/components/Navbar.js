@@ -12,9 +12,9 @@ function Navbar() {
                 <ul className="navLinks">
                 {Auth.loggedIn() ? (
                   <>                
-                <li className="nav-item active"><Link to='/all-lists' className="navLinks">All Lists</Link></li>
+                <li className="nav-item active"><Link to='/' className="navLinks">All Lists</Link></li>
                 <li className="nav-item active"><Link to='/my-lists' className="navLinks">My Lists</Link></li>
-                <li className="nav-item active" onClick={Auth.logout} >Logout</li>
+                <li className="nav-item active" onClick={Auth.logout}><Link to='/'> Logout </Link></li>
                   </>
                 ) : (
                   <>
