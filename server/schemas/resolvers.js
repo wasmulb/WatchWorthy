@@ -15,7 +15,7 @@ const resolvers = {
             if(!context.user){
                 throw new AuthenticationError('Error, no user logged in!')
             }
-            return User.findOne({ _id: context.user._id}).populate('movieLists').populate({
+            return User.findOne({ _id: context.user._id}).populate('watchedMovies').populate('movieLists').populate({
                 path: 'movieLists',
                 populate: 'movies'
             })
