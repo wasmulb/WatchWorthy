@@ -54,7 +54,11 @@ function Login() {
         <input type="password" name="password" placeholder="Password" value={formState.password} onChange={handleChange} required />
         <button type="submit" className="btn btn-primary btn-block btn-large">Let's go!</button>
     </form>
+    
+   
+    
     <Footer/>
+    <p className='description'>Track your progress as you watch your favorite movies</p>
 </div>
 </div>
   )

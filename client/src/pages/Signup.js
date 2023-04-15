@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Footer from '../components/Footer'
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import { useNavigate } from "react-router-dom";
@@ -40,6 +40,7 @@ function Signup() {
     } catch (err) {
       console.error(err);
       setShowAlert(true);
+      if (err) return <p className='noMovieText'>Error : user already exists</p>
     }
 
     setUserFormData({

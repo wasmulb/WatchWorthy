@@ -30,7 +30,7 @@ const MovieList = ({ movieLists }) => {
     <div className='movieListContainer'>
       {movieLists.map((movieList, index) => (
         <div key={index} className='movieListCard'>
-          {movieList.listName}
+         <h1>{movieList.listName}</h1>
           <div className='movieInfo'>
             {movieList.movies.slice(0, visibleMovieCount).map((movie, index) => (
               <div key={index} className='movieText'>
@@ -38,11 +38,11 @@ const MovieList = ({ movieLists }) => {
               </div>
             ))}
             {visibleMovieCount < movieList.movies.length && (
-            <button className="btn btn-primary btn-large" onClick={handleShowMoreClick}>Show more</button>)}
+            <button className="btn1 btn1-primary btn1-large" onClick={handleShowMoreClick}>Show more</button>)}
             {visibleMovieCount > 5 && (
-            <button className="btn btn-primary btn-large" onClick={handleShowLessClick}>Show Less</button>)}
+            <button className="btn1 btn1-primary btn1-large" onClick={handleShowLessClick}>Show Less</button>)}
           </div>
-          <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => handleAddToList(movieList._id)}>Add to My Lists!</button>
+          <button type="submit" className="btn1 btn1-primary btn1-block btn1-large" onClick={() => handleAddToList(movieList._id)}>Add to My Lists!</button>
         </div>
       ))}
     </div>
