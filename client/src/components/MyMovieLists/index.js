@@ -55,7 +55,7 @@ const MyMovieLists = () => {
   const { movieLists } = data.me;
 
   if (movieLists.length === 0) {
-    return <h1>No Movie Lists!</h1>;
+    return <h1 className = 'noMovieText'>No Movie Lists!</h1>;
   }
   
 
@@ -73,24 +73,24 @@ const MyMovieLists = () => {
             <div className='movieInfo'>
               {unwatchedMoviesArray3.slice(0, visibleMovieCount).map((movie, index) => (
                 <div key={index} className='movieText'>
-                  <p>{movie.title} | Director: {movie.director} | {movie.yearReleased}</p>
-                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => {
-                    markAsWatched(movie._id)}}>Mark as watched!</button>
+                  <p className = 'myListInfo'> <h4 className= 'movieTitleMyLists'>{movie.title}</h4> <p className ='smallMovieText'> Directed by <strong>{movie.director} </strong> <em>{movie.yearReleased}</em></p></p>
+                  <button type="submit" className="btn2 btn2-primary btn2-block btn2-large" onClick={() => {
+                    markAsWatched(movie._id)}}> <p className = 'add'>Mark as watched! </p></button>
                 </div>
               ))}
               {watchedMoviesArray.slice(0, visibleMovieCount).map((movie, index) => (
                 <div key={index} className='movieText'>
-                  <p>{movie.title} | Director: {movie.director} | {movie.yearReleased}</p>
-                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => markAsUnwatched(movie._id)}>Watched! Click to remove as Watched</button>
+                 <p className = 'myListInfo'> <h4 className= 'movieTitleMyLists'>{movie.title}</h4> <p className ='smallMovieText'> Directed by <strong>{movie.director} </strong> <em>{movie.yearReleased}</em></p></p>
+                  <button type="submit" className="btn2 btn2-primary btn2-block btn2-large" onClick={() => markAsUnwatched(movie._id)}><p className = 'remove'> <p className = 'check'>✓</p>Remove from watched!</p></button>
                 </div>
               ))}
               {visibleMovieCount < unwatchedMoviesArray3.length + watchedMoviesArray.length && (
-                <button className='btn btn-primary btn-large' onClick={handleShowMoreClick}>
+                <button className='btn1 btn1-primary btn1-large' onClick={handleShowMoreClick}>
                   Show more
                 </button>
               )}
               {visibleMovieCount > 5 && (
-                <button className='btn btn-primary btn-large' onClick={handleShowLessClick}>
+                <button className='btn1 btn1-primary btn1-large' onClick={handleShowLessClick}>
                   Show less
                 </button>
               )}
