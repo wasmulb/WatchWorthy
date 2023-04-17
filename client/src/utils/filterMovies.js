@@ -7,9 +7,7 @@ export function filterMovies(movieList, watchedMoviesList) {
 
   console.log(objSet)
   for (const obj1 of movieList) {
-    console.log(obj1)
     const obj1Id = objToString(obj1);
-    console.log(obj1Id)
     if (objSet.has(obj1Id)) {
       watchedMoviesArray.push(obj1);
       objSet.delete(obj1Id);

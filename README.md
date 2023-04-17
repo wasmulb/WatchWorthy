@@ -1,6 +1,10 @@
 # WatchWorthy
 Levi and Conner's project #3
 
+## Link to Deployed Website:
+
+https://watch-worthy.herokuapp.com/
+
 ## User Story
 AS an avid movie watcher
 I WANT to browse popular movie lists
@@ -11,7 +15,7 @@ GIVEN a movie list tracking website
 WHEN I load the homepage
 THEN I am presented with a landing page with prompts to sign in and a description of the movie tracking site
 WHEN I click to signup
-THEN I am presented with a signup from with prompts for username, email and password
+THEN I am presented with a signup form with prompts for username, email and password
 WHEN I click to login
 THEN I am able to make an account that authenticates through JWT
 WHEN I login
@@ -23,7 +27,7 @@ THEN I can click the button to add a movie to the watched list
 WHEN I want to rewatch a movie
 THEN I can click the button again to mark the movie as unwatched, so you never lose track of what has and has not been watched
 WHEN I click to logout
-THEN I am logged out an redirected back to the login page
+THEN I am logged out and redirected back to the login page
 
 ## Description
 This web application was made to track movies that a user watches by creating an account, adding different movie lists to their own kept lists, and marking movies as either watched or unwatched as they progress through watching movies on their lists.
