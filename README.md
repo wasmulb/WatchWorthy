@@ -26,7 +26,7 @@ WHEN I click to logout
 THEN I am logged out an redirected back to the login page
 
 ## Description
-This web application was made to track movies that a user watches by creating an account, adding different movie lists to their own kept lists, and marking movies as either watched or unwatched as they progress through watching movies on said list.
+This web application was made to track movies that a user watches by creating an account, adding different movie lists to their own kept lists, and marking movies as either watched or unwatched as they progress through watching movies on their lists.
 
 ## Table of Contents
 
@@ -36,30 +36,34 @@ This web application was made to track movies that a user watches by creating an
 
 ## Usage
 
-When the web application loads, you are presented with a beautiful image of a locally captured trail in the woods. Below, there is a search bar where you are prompted to search for a city of your choosing. Right now, the web application is able to search for cities only; an idea for future development could be to implement different search criteria for the user.
+When the web application loads, you are presented with a login page with a navbar to navigate to different pages, a footer with the title of the application and a description of what the app is used for. The login page prompts email and password of a created account.
 
-![alt text](assets/images/screenshots/Screenshot%202022-12-11%20at%206.36.43%20PM.png)
+![alt text](./client/src/assets/images/screenshots/ScreenshotLogin.png)
 
-As shown below, a search of the word "seattle" pulls results of local hiking trails, biking trails and campsites within a 25 mile proximity to the city. When the search button is clicked, the city name is stored to the local storage of the user's machine. In future development, we plan to incorporate the use of searched criteria with Google analytics to create reports that provide insights into the usage of our web application. The data is pulled using our first server side api, TrailAPI, and is organized and appended into clickable cards in three different columns. Each card has the title of the trail or campsite, a description of trail or campsite, and instructions to click the card to pull up directions via Google Maps.
+The next screenshot shows the signup page. This allows the user to create an account using JWT authentication. Each user is has a username, email and password associated with their account.
 
-![alt text](assets/images/screenshots/Screenshot%202022-12-11%20at%206.36.58%20PM.png)
+![alt text](./client/src/assets/images/screenshots/ScreenshotSignup.png)
 
-Below is an example of the map that is loaded into a seperate tab once a card is clicked. In this case, I clicked the card of "Camp Long". To do this, we made a click event on the appended card using Google Maps Embed API based on the name derived from TrailAPI.
+Below is what is loaded once the user logs in. The database holds multiple movie lists with many movies on each list. Only 5 movies per list are initially shown so that the user can scroll down to view multiple lists. A show more and show less button are implemented to let the user expand the amount of movies shown on each list. Once a list has been found that the user wishes to track their progress on, the user can click the button to add that list to their own list of movies.
 
-![alt text](assets/images/screenshots/Screenshot%202022-12-11%20at%206.50.00%20PM.png)
+![alt text](./client/src/assets/images/screenshots/ScreenshotAllLists1.png)
+![alt text](./client/src/assets/images/screenshots/ScreenshotAllLists2.png)
 
-The next two screenshots show our About section, where we list who contributed to the project, which API we used and give photo credit. We recieved permission to use the photographs displayed on the web application.
+The next screenshot shows the user the my-lists page that is loaded when clicking on the navbar after deciding on which lists to track. No movies are initially displayed to the user to let them scroll through which list they want to begin tracking.
 
-![alt text](assets/images/screenshots/Screenshot%202022-12-11%20at%206.37.22%20PM.png)
-![alt text](assets/images/screenshots/Screenshot%202022-12-11%20at%206.37.43%20PM.png)
+![alt text](./client/src/assets/images/screenshots/ScreenshotShowAllMyLists.png)
+
+The user can click the show more button to display +5 movies on the list, where the user is prompted to click a button once the movie has been watched. This button marks the movie as watched and moves it from the top of the list.
+
+![alt text](./client/src/assets/images/screenshots/ScreenshotWatched.png)
+
+The user is prompted to click another button to remove the movie from being watched, which can be helpful if a user wants to rewatch a movie. This button marks the movie as unwatched and adds it back to the top of the list.
+
+![alt text](./client/src/assets/images/screenshots/ScreenshotUnWatch.png)
 
 ## Credits
 
-Contributors: Levi, Joon and Conner
-
-APIs used: Trail API and Google Maps Embed API
-
-Photo Credit: Jonathan Miske
+Contributors: Levi and Conner
 
 ## License 
 
