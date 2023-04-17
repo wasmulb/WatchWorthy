@@ -4,19 +4,29 @@ Levi and Conner's project #3
 ## User Story
 AS an avid movie watched
 I WANT to browse popular movie lists
-SO THAT I can track my progress as I watch the movies.
+SO THAT I can track my progress as I watch the movies
 
 ## Acceptance Criteria
 GIVEN a movie list tracking website
 WHEN I load the homepage
-THEN I am presented with a landing page with prompts to sign in and a description of the movie tracking site.
+THEN I am presented with a landing page with prompts to sign in and a description of the movie tracking site
+WHEN I click to signup
+THEN I am presented with a signup from with prompts for username, email and password
 WHEN I click to login
-THEN I am able to make an account that authenticates through JWT.
-WHEN I click to login
-THEN I am able to make an account that authenticates through JWT.
+THEN I am able to make an account that authenticates through JWT
+WHEN I login
+THEN I am presented with all of the movie lists that I can look through and choose what to start tracking
+WHEN I click to my lists
+THEN I am presented with the movie lists that I decided to track
+WHEN I finish watching a movie
+THEN I can click the button to add a movie to the watched list
+WHEN I want to rewatch a movie
+THEN I can click the button again to mark the movie as unwatched, so you never lose track of what has and has not been watched
+WHEN I click to logout
+THEN I am logged out an redirected back to the login page
 
 ## Description
-This web application was made to locate trails and campsites around a city of your choice. This was a project for a fullstack development bootcamp through the University of Washington. We hope this website gets you into the great outdoors!
+This web application was made to track movies that a user watches by creating an account, adding different movie lists to their own kept lists, and marking movies as either watched or unwatched as they progress through watching movies on said list.
 
 ## Table of Contents
 
