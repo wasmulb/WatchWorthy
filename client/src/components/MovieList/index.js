@@ -34,7 +34,7 @@ const MovieList = ({ movieLists }) => {
           <div className='movieInfo'>
             {movieList.movies.slice(0, visibleMovieCount).map((movie, index) => (
               <div key={index} className='movieText'>
-                Movie Title: {movie.title}, Movie Director: {movie.director}, Year Released: {movie.yearReleased}
+                <h4>{movie.title}</h4> <p className ='smallMovieText'> Directed by <strong>{movie.director}</strong> | {movie.yearReleased}</p>
               </div>
             ))}
             {visibleMovieCount < movieList.movies.length && (
