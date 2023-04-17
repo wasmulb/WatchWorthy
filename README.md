@@ -2,7 +2,7 @@
 Levi and Conner's project #3
 
 ## User Story
-AS an avid movie watched
+AS an avid movie watcher
 I WANT to browse popular movie lists
 SO THAT I can track my progress as I watch the movies
 
