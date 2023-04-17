@@ -7,7 +7,7 @@ import { WATCHED_MOVIE } from '../../utils/mutations';
 import { UNWATCH_MOVIE } from '../../utils/mutations';
 
 const MyMovieLists = () => {
-  const { loading, error, data } = useQuery(MY_PROFILE);
+  const { loading, error, data, refetch } = useQuery(MY_PROFILE);
   const [visibleMovieCount, setVisibleMovieCount] = useState(0);
   const [watchedMovie] = useMutation(WATCHED_MOVIE);
   const [unwatchMovie] = useMutation(UNWATCH_MOVIE);
@@ -20,49 +20,71 @@ const MyMovieLists = () => {
     setVisibleMovieCount(visibleMovieCount - 5);
   };
 
+  const markAsWatched = (movieId) => {
 
-  if (loading) return <h3 className='noMovieText'>Loading...</h3>;
-  if (error) return <p className='noMovieText'>Error : no user logged in</p>;
+    watchedMovie({ variables: { movieId } })
+      .then((response) => {
+        console.log('Movie added successfully!', response);
+        refetch()
+      })
+      .catch((error) => {
+        console.error('Error adding movie:', error);
+      });
+  };
+
+  const markAsUnwatched = (movieId) => {
+
+    unwatchMovie({ variables: { movieId } })
+      .then((response) => {
+        console.log('Movie removed successfully!', response);
+        refetch()
+      })
+      .catch((error) => {
+        console.error('Error adding movie:', error);
+      });
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error :</p>;
+  }
 
   const { movieLists } = data.me;
 
   if (movieLists.length === 0) {
-    return <h1 className='noMovieText'>No Movie Lists!</h1>;
+    return <h1>No Movie Lists!</h1>;
   }
   
 
   return (
     <div className='movieListContainer'>
       {movieLists.map((movieList, index) => {
-        const [watchedMovies, unwatchedMovies] = filterMovies(
+        const [watchedMoviesArray, unwatchedMoviesArray3] =filterMovies(
           movieList.movies,
           data.me.watchedMovies
         );
-          console.log(watchedMovies)
-          console.log(unwatchedMovies)
         return (
           <div key={index} className='movieListCard'>
             <h1>{movieList.listName} </h1>
-            <p>Progress: {watchedMovies.length} / {movieList.movies.length} watched</p>
+            <p>Progress: {watchedMoviesArray.length} / {movieList.movies.length} watched</p>
             <div className='movieInfo'>
-              {unwatchedMovies.slice(0, visibleMovieCount).map((movie, index) => (
+              {unwatchedMoviesArray3.slice(0, visibleMovieCount).map((movie, index) => (
                 <div key={index} className='movieText'>
                   <p>{movie.title} | Director: {movie.director} | {movie.yearReleased}</p>
-                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => watchedMovie(movie._id)}>Mark as watched!</button>
+                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => {
+                    markAsWatched(movie._id)}}>Mark as watched!</button>
                 </div>
               ))}
-              {watchedMovies.slice(0, visibleMovieCount).map((movie, index) => (
+              {watchedMoviesArray.slice(0, visibleMovieCount).map((movie, index) => (
                 <div key={index} className='movieText'>
                   <p>{movie.title} | Director: {movie.director} | {movie.yearReleased}</p>
-                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => watchedMovie(movie._id)}>Watched!</button>
+                  <button type="submit" className="btn btn-primary btn-block btn-large" onClick={() => markAsUnwatched(movie._id)}>Watched! Click to remove as Watched</button>
                 </div>
               ))}
-              {visibleMovieCount < unwatchedMovies.length && (
-                <button className='btn btn-primary btn-large' onClick={handleShowMoreClick}>
-                  Show more
-                </button>
-              )}
-              {visibleMovieCount < watchedMovies.length && (
+              {visibleMovieCount < unwatchedMoviesArray3.length + watchedMoviesArray.length && (
                 <button className='btn btn-primary btn-large' onClick={handleShowMoreClick}>
                   Show more
                 </button>
@@ -73,12 +95,6 @@ const MyMovieLists = () => {
                 </button>
               )}
             </div>
-            
-          ))}
-          {visibleMovieCount < movieList.movies.length && (
-            <button className="btn1 btn1-primary btn1-large" onClick={handleShowMoreClick}>Show more</button>)}
-            {visibleMovieCount > 5 && (
-            <button className="btn1 btn1-primary btn1-large" onClick={handleShowLessClick}>Show Less</button>)}
           </div>
         );
       })}

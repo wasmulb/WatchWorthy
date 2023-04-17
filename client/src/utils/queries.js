@@ -9,12 +9,14 @@ query Me {
     movieLists {
       listName
       movies {
+        _id
         director
         title
         yearReleased
       }
     }
     watchedMovies {
+      _id
       title
       director
       yearReleased
