@@ -81,7 +81,7 @@ const MyMovieLists = () => {
               {watchedMoviesArray.slice(0, visibleMovieCount).map((movie, index) => (
                 <div key={index} className='movieText'>
                  <p className = 'myListInfo'> <h4 className= 'movieTitleMyLists'>{movie.title}</h4> <p className ='smallMovieText'> Directed by <strong>{movie.director} </strong> <em>{movie.yearReleased}</em></p></p>
-                  <button type="submit" className="btn2 btn2-primary btn2-block btn2-large" onClick={() => markAsUnwatched(movie._id)}><p className = 'remove'> <p className = 'check'>✓</p>Remove from watched!</p></button>
+                  <button type="submit" className="btn2 btn2-primary btn2-block btn2-large" onClick={() => markAsUnwatched(movie._id)}><p className = 'remove'> <p className = 'check'>✓</p>Remove from watched</p></button>
                 </div>
               ))}
               {visibleMovieCount < unwatchedMoviesArray3.length + watchedMoviesArray.length && (
