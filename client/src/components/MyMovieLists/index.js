@@ -55,7 +55,7 @@ const MyMovieLists = () => {
   const { movieLists } = data.me;
 
   if (movieLists.length === 0) {
-    return <h1 className = 'noMovietext'>No Movie Lists!</h1>;
+    return <h1 className = 'noMovieText'>No Movie Lists!</h1>;
   }
   
 
