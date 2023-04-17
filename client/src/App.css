@@ -87,6 +87,23 @@ body {
 .btn2-primary:hover, .btn2-primary:active, .btn2-primary.active, .btn2-primary.disabled, .btn2-primary[disabled] { filter: none; background-color: #343434c1; transition: transform 250ms;  transform:scale(101%); }
 .btn2-block { display:block; }
 
+.btn3 { margin-right:5px; margin-left:5px; display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(15, 15, 15, 0.75); vertical-align: middle; background-color: #000000; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #1c1c1c, #212121); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #00000000, #00000000); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer;  }
+.btn3:hover:hover, .btn3:active, .btn3.active, .btn3.disabled, .btn3[disabled] { background-color: #343434; }
+.btn3-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn3:hover { color: #333333; text-decoration: none; background-color: #343434; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn3-primary, .btn3-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.564); color: white; border: 1px solid white  }
+.btn3-primary.active { color: rgba(0, 0, 0, 0.25); }
+.btn3-primary { background-color: rgba(0, 0, 0, 0.502);}
+.btn3-primary:hover, .btn3-primary:active, .btn3-primary.active, .btn3-primary.disabled, .btn3-primary[disabled] { filter: none; background-color: #343434c1; transition: transform 250ms;  transform:scale(101%); }
+.btn3-block { width: 50%; display:inline; }
+
+.btn3:after {
+  transition: transform 250ms;  transform:scale(100%);
+}
+
+.btn3-primary:active:focus {
+  transition: transform 250ms;  transform:scale(104%);
+}
 
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
@@ -235,6 +252,7 @@ input::-webkit-input-placeholder {
 .movieText {
   justify-content: space-between;
   color: white;
+  text-justify: left;
   display:flex;
   border-radius: 10px;
   border: 1px solid white;
@@ -249,6 +267,10 @@ input::-webkit-input-placeholder {
   
 }
 
+.myListInfo {
+text-align: left;
+    
+}
 .noMovieText {
   color: white;
   height: 10%;
@@ -322,13 +344,20 @@ input::-webkit-input-placeholder {
 
 /* RESPONSIVE CSS */
 
+
 @media screen and (max-width: 1024px) {
 body{
   background-size: 130% 100%;
 
 }
-
+.myListInfo {
+  width:65%;
+  text-align: left;
+      
+  }
 }
+
+
 
 @media screen and (max-width: 768px) {
 
@@ -393,12 +422,12 @@ body{
     min-width: 50%;
    text-justify: left;
   }
-  
+ 
   .movieTitleMyLists {
     display: flex;
     justify-content: left;
     text-justify: left;
-    font-size:12px;
+    font-size:11px;
     margin:10px;
     margin-right:0px;
     margin-left:0px;
@@ -409,6 +438,12 @@ body{
     margin-left:0px;
     font-size: 10px;
   }
+
+.myListInfo {
+  text-align: left;
+      
+  }
+
 }
 
 
